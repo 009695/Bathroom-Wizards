@@ -2,12 +2,15 @@
 
 ## Writing
 
-- **No em dashes or en dashes anywhere**, including HTML entities (`&mdash;`, `&ndash;`).
-  Use commas, full stops, colons, brackets, or the word "to" for ranges. This is enforced.
+- **No em dashes or en dashes anywhere**, including their HTML entity forms (the `mdash` and
+  `ndash` entities). Use commas, full stops, colons, brackets, or the word "to" for ranges.
+  This is enforced by a hook, so a write containing one will be rejected.
 - Write the way a Medway tradesperson would talk to a customer. Plain, direct, no marketing filler.
   "We turn up when we say we will" beats "customer centric service delivery".
 - British spelling and £ formatting throughout.
 - Prices are always written as "from £X" so nobody reads them as a fixed quote.
+- **Never print prices on the business cards.** They outlive the prices. Cards carry a QR code to
+  the site, where prices can be changed without a reprint.
 
 ## HTML
 

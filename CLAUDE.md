@@ -86,9 +86,13 @@ CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 "$CHROME" --headless=new --no-pdf-header-footer --print-to-pdf=datasheet-bathrooms.pdf datasheet-bathrooms.html
 ```
 
-**Change a price.** Prices appear in three places and must be kept in step:
-`bathrooms/index.html`, `print/datasheet-bathrooms.html`, and the back of the Bathroom Wizards
-card in `print/business-cards.html`.
+**Change a price.** Prices appear in two places and must be kept in step:
+`bathrooms/index.html` and `print/datasheet-bathrooms.html`.
+
+**Never put prices on the business cards.** Cards last years, material costs do not, and a printed
+price is something a customer can hold you to. The QR code exists so pricing lives somewhere that
+can be updated. The cards say "scan for our current prices" instead, which also gives the QR code
+a real job.
 
 ## Gotchas
 

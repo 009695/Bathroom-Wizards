@@ -90,11 +90,15 @@ These sit deliberately at or below the bottom of the market range, on the basis 
 non VAT registered sole trader can undercut VAT registered firms and still earn well. **If Deben
 crosses the VAT threshold, every one of these numbers needs revisiting.**
 
-Prices appear in three files and must be kept in step:
+Prices appear in two files and must be kept in step:
 
 - `bathrooms/index.html`
 - `print/datasheet-bathrooms.html`
-- `print/business-cards.html` (back of the Bathroom Wizards card)
+
+**The business cards deliberately carry no prices.** Cards last for years, material costs do not,
+and a printed price is one a customer can hold you to. The cards point at the website via QR code,
+so pricing can be corrected any time without reprinting. The A4 datasheet does carry prices,
+because it is printed in small batches and handed over during a quote.
 
 ---
 
