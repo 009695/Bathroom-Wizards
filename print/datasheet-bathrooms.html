@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Bathroom Wizards - Price Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650;700;750;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 10mm 12mm; }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; font-family: "Inter", system-ui, sans-serif; color: #221733;
+         font-size: 9.1pt; line-height: 1.44; }
+  /* the paper-on-desk look is a screen affordance only - print gets a clean flow
+     so nothing fights the @page box and pushes the footer onto a second sheet */
+  @media screen {
+    body { background: #7a7280; }
+    .page { width: 210mm; min-height: 297mm; padding: 10mm 12mm; margin: 24px auto;
+            background: #fff; box-shadow: 0 8px 30px rgba(0,0,0,.3); }
+  }
+
+  header { display: flex; gap: 7mm; align-items: center; border-bottom: 1mm solid #562b7f; padding-bottom: 3.6mm; }
+  header img { width: 18mm; }
+  h1 { font-size: 19pt; margin: 0; letter-spacing: -.02em; line-height: 1.06; }
+  .sub { font-size: 9pt; color: #6a5a80; margin: 1mm 0 0; }
+  .contact { margin-left: auto; text-align: right; }
+  .contact .tel { font-size: 15pt; font-weight: 800; color: #562b7f; letter-spacing: -.02em; margin: 0; }
+  .contact p { margin: .6mm 0 0; font-size: 8.2pt; color: #6a5a80; }
+
+  .intro { margin: 2.8mm 0 2.8mm; font-size: 9pt; color: #3d3049; max-width: 155mm; }
+  .intro strong { color: #221733; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 5.5mm; }
+  h2 { font-size: 8pt; letter-spacing: .1em; text-transform: uppercase; color: #fff;
+       background: #562b7f; margin: 0 0 0; padding: 1.7mm 3.2mm; border-radius: 1.5mm 1.5mm 0 0; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 3.1mm; }
+  td { padding: 1.02mm 3mm; border-bottom: .2mm solid #eae3f2; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td.p { text-align: right; font-weight: 750; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  td small { display: block; color: #857896; font-size: 7pt; line-height: 1.25; font-weight: 400; }
+  .tbl { border: .2mm solid #eae3f2; border-top: none; border-radius: 0 0 1.5mm 1.5mm; overflow: hidden; }
+
+  .why { background: #f7f4fb; border-radius: 2mm; padding: 3.4mm 4.5mm; margin: 0 0 3mm; }
+  .why h3 { margin: 0 0 1.4mm; font-size: 9.4pt; }
+  .why ul { margin: 0; padding-left: 4.5mm; }
+  .why li { margin-bottom: .7mm; font-size: 8.5pt; line-height: 1.36; }
+
+  .note { font-size: 7.3pt; line-height: 1.38; color: #5b4d6b; border-top: .3mm solid #eae3f2; padding-top: 2.6mm; margin-top: .5mm; }
+  .note strong { color: #221733; }
+
+  footer { margin-top: 2.4mm; padding-top: 2.2mm; border-top: 1mm solid #562b7f;
+           display: flex; gap: 5mm; align-items: center; }
+  footer .qr { width: 17mm; height: 17mm; }
+  footer .qr img { width: 100%; display: block; }
+  footer .cta h3 { margin: 0 0 .6mm; font-size: 10.8pt; letter-spacing: -.01em; }
+  footer .cta p { margin: 0; font-size: 8.2pt; color: #5b4d6b; }
+  .stamp { margin-left: auto; text-align: right; font-size: 7.4pt; color: #857896; }
+
+  .draft { background: #fff4d6; border: .3mm solid #e8d08f; color: #5b4408; font-size: 7.5pt;
+           padding: 1.7mm 3mm; border-radius: 1.5mm; margin-bottom: 0; }
+
+  @media print { .page { margin: 0; padding: 0; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <img src="../assets/img/logo-bathroomwizards.png" alt="Bathroom Wizards">
+    <div>
+      <h1>Bathroom Wizards</h1>
+      <p class="sub">Bathroom fitters &middot; Gillingham &amp; the Medway towns</p>
+    </div>
+    <div class="contact">
+      <p class="tel">07557 733363</p>
+      <p>Free written quotes</p>
+      <p>&#9733; 10/10 on Checkatrade</p>
+    </div>
+  </header>
+
+  <div class="draft">
+    <strong>Draft price guide.</strong> Benchmarked against 2026 South East rates. Confirm before issuing to customers.
+  </div>
+
+  <p class="intro">Most bathroom fitters will not give you a price until they are standing in your hallway.
+     We think you should have an idea before you ring. These are our honest starting prices, and
+     <strong>every quote we give is free, in writing, and fixed.</strong></p>
+
+  <div class="cols">
+    <div>
+      <h2>Complete rooms</h2>
+      <div class="tbl"><table>
+        <tr><td>Complete bathroom refit<small>Labour only. You supply suite and tiles. 6 to 9 days.</small></td><td class="p">from &pound;2,400</td></tr>
+        <tr><td>Complete bathroom, supply &amp; fit<small>Suite, tiles, materials and labour included.</small></td><td class="p">from &pound;4,900</td></tr>
+        <tr><td>Wet room, fully tanked<small>Level access, tanking, falls to drain, tiled.</small></td><td class="p">from &pound;3,900</td></tr>
+        <tr><td>Disabled / mobility bathroom<small>Level access shower, grab rails, raised WC.</small></td><td class="p">from &pound;3,200</td></tr>
+        <tr><td>En-suite or cloakroom<small>Smaller rooms, typically 3 to 5 days.</small></td><td class="p">from &pound;1,500</td></tr>
+        <tr><td>Like-for-like suite swap<small>Same layout, new suite, no re-tiling.</small></td><td class="p">from &pound;1,150</td></tr>
+        <tr><td>Strip-out &amp; disposal<small>Old suite removed, waste taken away.</small></td><td class="p">from &pound;450</td></tr>
+      </table></div>
+
+      <h2>Tiling, cladding &amp; finishing</h2>
+      <div class="tbl"><table>
+        <tr><td>Wall tiling</td><td class="p">from &pound;45 / m&sup2;</td></tr>
+        <tr><td>Floor tiling</td><td class="p">from &pound;40 / m&sup2;</td></tr>
+        <tr><td>Waterproof cladding</td><td class="p">from &pound;38 / m&sup2;</td></tr>
+        <tr><td>Re-seal &amp; re-grout<small>Stops damp getting behind the tiles.</small></td><td class="p">from &pound;95</td></tr>
+        <tr><td>Bath resurfacing<small>Cheaper than replacing, back in use next day.</small></td><td class="p">from &pound;280</td></tr>
+      </table></div>
+    </div>
+
+    <div>
+      <h2>Single items</h2>
+      <div class="tbl"><table>
+        <tr><td>Toilet replaced<small>Close-coupled, like for like.</small></td><td class="p">from &pound;150</td></tr>
+        <tr><td>Basin or vanity unit fitted</td><td class="p">from &pound;140</td></tr>
+        <tr><td>Bath fitted<small>Including panel and taps.</small></td><td class="p">from &pound;240</td></tr>
+        <tr><td>Shower replaced<small>Onto existing plumbing.</small></td><td class="p">from &pound;180</td></tr>
+        <tr><td>Shower enclosure &amp; tray</td><td class="p">from &pound;395</td></tr>
+        <tr><td>Heated towel rail</td><td class="p">from &pound;165</td></tr>
+        <tr><td>Extractor fan fitted</td><td class="p">from &pound;145</td></tr>
+      </table></div>
+
+      <h2>Rates</h2>
+      <div class="tbl"><table>
+        <tr><td>Day rate<small>For anything not listed above.</small></td><td class="p">&pound;240 / day</td></tr>
+        <tr><td>Half day<small>Up to four hours.</small></td><td class="p">&pound;140</td></tr>
+        <tr><td>Emergency call-out<small>Leaks and failed showers, same day where we can.</small></td><td class="p">from &pound;85</td></tr>
+        <tr><td>Materials<small>At cost with receipts, or supply your own.</small></td><td class="p">at cost</td></tr>
+      </table></div>
+
+      <div class="why">
+        <h3>Why us</h3>
+        <ul>
+          <li><strong>No VAT to add.</strong> Not VAT registered, so nothing goes on top.</li>
+          <li><strong>City &amp; Guilds qualified</strong> bench joinery and engineering.</li>
+          <li><strong>Fixed written quotes</strong> that do not creep.</li>
+          <li><strong>One team</strong> start to finish, tidied every evening.</li>
+          <li><strong>12 month guarantee</strong> on all workmanship.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <p class="note"><strong>The small print.</strong> Prices are starting points and assume reasonable
+     access and sound existing pipework. If we find something behind the wall (rotten boards,
+     lead pipe, no waterproofing) we stop, show you, and agree the cost before carrying on.
+     Nothing is ever added to your bill without your say-so. Bathroom electrics requiring a certificate
+     are carried out by our qualified electrician and the paperwork comes to you.</p>
+
+  <footer>
+    <div class="qr"><img src="qr/qr-bathrooms.svg" alt="Scan for the full price list"></div>
+    <div class="cta">
+      <h3>Scan for the full price list</h3>
+      <p>Or call <strong>07557 733363</strong> and we will come and measure up. Free, no pressure.</p>
+    </div>
+    <div class="stamp">
+      Bathroom Wizards<br>Gillingham, Kent<br>Checkatrade member since 2024
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

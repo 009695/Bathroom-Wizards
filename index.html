@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website prototypes - Deben &amp; Natasha</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650;700;750;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<style>
+  .tile { display:block; text-decoration:none; border-radius:22px; overflow:hidden;
+          border:1px solid var(--line); background:#fff; box-shadow:var(--shadow); transition:transform .16s ease, box-shadow .16s ease; }
+  .tile:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+  .tile .shot { aspect-ratio:16/10; object-fit:cover; width:100%; }
+  .tile .body { padding:22px 24px 26px; }
+  .tile h3 { margin:0 0 .3em; }
+  .tile p { margin:0 0 .8em; color:var(--ink-2); font-size:.96rem; }
+  .tag { font-size:.76rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+</style>
+</head>
+<body>
+
+<section class="tight" style="background:#12171d; color:#fff">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#f5c518">Prototype &middot; not live</p>
+    <h1 style="color:#fff; max-width:16em">Website concepts for Deben &amp; Natasha</h1>
+    <p class="lede" style="color:rgba(255,255,255,.85); max-width:44em">
+      Three brands, built as separate sites off one shared design system. Real photos and logos
+      taken from the existing sites and the Checkatrade profile. Prices are researched draft
+      figures that need confirming before anything goes live.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="grid g3">
+
+      <a class="tile" href="handyfix/">
+        <img class="shot" src="assets/img/khf-bathroom.jpg" alt="">
+        <div class="body">
+          <p class="tag" style="color:#b58900">Domestic property</p>
+          <h3>Kent HandyFix</h3>
+          <p>Handyman services across Medway. Rate card, common job prices and a strong "small jobs welcome" pitch.</p>
+          <span class="badge">View site &rarr;</span>
+        </div>
+      </a>
+
+      <a class="tile" href="bathrooms/">
+        <img class="shot" src="assets/img/bw-vanity.jpg" alt="">
+        <div class="body">
+          <p class="tag" style="color:#562b7f">Bathrooms</p>
+          <h3>Bathroom Wizards</h3>
+          <p>Full bathroom fitting. Carries the complete published price list, the main differentiator against local rivals.</p>
+          <span class="badge" style="background:#562b7f; color:#fff">View site &rarr;</span>
+        </div>
+      </a>
+
+      <a class="tile" href="shipwrights/">
+        <img class="shot" src="assets/img/ks-barge-hero.jpg" alt="">
+        <div class="body">
+          <p class="tag" style="color:#c08a3e">Marine craft</p>
+          <h3>Kentish Shipwrights</h3>
+          <p>Marine carpentry and custom block making. Redesign of the existing site, leading on the block making.</p>
+          <span class="badge" style="background:#14313a; color:#f4efe4">View site &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="grid g2" style="margin-top:26px">
+      <a class="tile" href="print/business-cards.html" style="display:flex; align-items:center; gap:20px; padding:22px 24px">
+        <span style="font-size:2rem">&#127991;</span>
+        <span><strong style="display:block; font-size:1.06rem">Business cards</strong>
+        <span style="color:var(--ink-2); font-size:.94rem">Three designs, front and back, print-ready with QR codes</span></span>
+      </a>
+      <a class="tile" href="print/datasheet-bathrooms.html" style="display:flex; align-items:center; gap:20px; padding:22px 24px">
+        <span style="font-size:2rem">&#128196;</span>
+        <span><strong style="display:block; font-size:1.06rem">Bathroom price datasheet</strong>
+        <span style="color:var(--ink-2); font-size:.94rem">A4 leave-behind, attach to quotes or hand over on site</span></span>
+      </a>
+    </div>
+
+    <div class="pricenote" style="margin-top:34px">
+      <strong>Before any of this goes live.</strong> Confirm the prices with Deben, get the Checkatrade
+      public liability insurance verified, and have an accountant confirm the VAT position across all
+      the trading names. The &pound;90,000 threshold applies per person, not per business name.
+      See <code>docs/handover.md</code> for the full list.
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot" style="background:#12171d">
+  <div class="wrap">
+    <div class="foot-base" style="margin-top:0; border:none">
+      <div>Prototype build, September 2026</div>
+      <div>Not indexed, not live</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

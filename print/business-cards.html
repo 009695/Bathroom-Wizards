@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Business Cards - Kent Trades</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+  /* UK standard business card 85 x 55 mm, plus 3mm bleed all round = 91 x 61 mm.
+     Trim marks sit at the 3mm inset. Keep all text inside the safe area (6mm from bleed edge). */
+  @page { size: 91mm 61mm; margin: 0; }
+
+  :root { --bleed: 3mm; --safe: 6mm; }
+
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    margin: 0; background: #5b636b; font-family: "Inter", system-ui, sans-serif;
+    padding: 30px 20px;
+  }
+
+  .sheet { max-width: 1000px; margin: 0 auto; }
+  .label { color: #fff; font-size: 13px; font-weight: 650; letter-spacing: .08em;
+           text-transform: uppercase; margin: 34px 0 12px; opacity: .9; }
+  .pair { display: flex; flex-wrap: wrap; gap: 16px; }
+
+  .card {
+    width: 91mm; height: 61mm; padding: var(--safe); position: relative;
+    overflow: hidden; display: flex; flex-direction: column;
+    background: #fff; color: #111;
+    box-shadow: 0 6px 22px rgba(0,0,0,.3);
+  }
+  /* trim guide - screen only */
+  .card::after {
+    content: ""; position: absolute; inset: var(--bleed);
+    outline: 1px dashed rgba(255,255,255,.34); pointer-events: none;
+  }
+  .card.light::after { outline-color: rgba(0,0,0,.22); }
+
+  .qr { width: 21mm; height: 21mm; background: #fff; padding: 1.2mm; border-radius: 1.5mm; }
+  .qr img { width: 100%; height: 100%; display: block; }
+
+  .name { font-size: 12.5pt; font-weight: 750; letter-spacing: -.01em; margin: 0; }
+  .role { font-size: 7pt; letter-spacing: .1em; text-transform: uppercase; opacity: .75; margin: .3em 0 0; }
+  .tel  { font-size: 13pt; font-weight: 800; letter-spacing: -.02em; margin: 0; }
+  .web  { font-size: 7.6pt; opacity: .8; margin: .25em 0 0; word-break: break-all; }
+  .push { margin-top: auto; }
+  ul.svc { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 5mm; }
+  ul.svc li { font-size: 7.4pt; line-height: 1.62; break-inside: avoid; }
+  ul.svc li::before { content: "\2022"; margin-right: .45em; opacity: .6; }
+
+  /* ---------- Kent HandyFix ---------- */
+  .khf-front { background: #12171d; color: #fff; }
+  .khf-front .logo { width: 33mm; }
+  .khf-front .tel { color: #f5c518; }
+  .khf-back { background: #fff; color: #12171d; border: .3mm solid #e4e7ea; }
+  .khf-back .bar { height: 2.2mm; background: #f5c518; position: absolute; left: 0; right: 0; top: 0; }
+  .khf-back h4 { font-size: 8.4pt; margin: 0 0 1.6mm; letter-spacing: .06em; text-transform: uppercase; color: #6a747d; }
+
+  /* ---------- Bathroom Wizards ---------- */
+  .bw-front { background: #562b7f; color: #fff; }
+  .bw-front .logo { width: 25mm; }
+  .bw-front .tel { color: #f0b429; }
+  .bw-back { background: #fff; color: #2a1240; border: .3mm solid #e6dff0; }
+  .bw-back .bar { height: 2.2mm; background: #562b7f; position: absolute; left: 0; right: 0; top: 0; }
+  .bw-back h4 { font-size: 8.4pt; margin: 0 0 1.6mm; letter-spacing: .06em; text-transform: uppercase; color: #8b6bb0; }
+  .prices { margin: 0; padding: 0; list-style: none; }
+  .prices li { display: flex; justify-content: space-between; gap: 3mm; font-size: 7.6pt;
+               line-height: 1.85; border-bottom: .2mm dotted #d9cde8; }
+  .prices b { font-weight: 750; white-space: nowrap; }
+
+  /* ---------- Kentish Shipwrights ---------- */
+  .ks-front { background: #14313a; color: #f4efe4; }
+  .ks-front .wordmark { font-family: "Newsreader", Georgia, serif; font-size: 15pt; font-weight: 500;
+                        line-height: 1.12; letter-spacing: -.01em; }
+  .ks-front .rule { width: 14mm; height: .5mm; background: #c08a3e; margin: 2.2mm 0; }
+  .ks-front .tel { color: #d9a45c; }
+  .ks-back { background: #fbf9f5; color: #16232a; border: .3mm solid #ded6c6; }
+  .ks-back .bar { height: 2.2mm; background: #c08a3e; position: absolute; left: 0; right: 0; top: 0; }
+  .ks-back h4 { font-size: 8.4pt; margin: 0 0 1.6mm; letter-spacing: .06em; text-transform: uppercase; color: #7b6a4f;
+                font-family: "Newsreader", Georgia, serif; letter-spacing: .04em; }
+
+  .row { display: flex; gap: 4mm; align-items: flex-end; justify-content: space-between; }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .label, .note { display: none; }
+    .sheet { max-width: none; }
+    .pair { display: block; gap: 0; }
+    .card { box-shadow: none; page-break-after: always; break-after: page; }
+    .card::after { display: none; }
+  }
+  .note { color:#fff; font-size:12.5px; line-height:1.6; opacity:.92; max-width:660px; margin:0 0 6px; }
+  .note code { background: rgba(0,0,0,.25); padding: 1px 5px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <p class="note"><strong>Print setup:</strong> 91 &times; 61&nbsp;mm page = 85 &times; 55&nbsp;mm card plus 3&nbsp;mm bleed.
+     Print to PDF at 100% scale, background graphics on. The dashed line is the trim edge and does not print.
+     Re-run <code>make-qr.py &lt;url&gt;</code> to repoint every QR code at a real domain.</p>
+
+  <!-- ============ KENT HANDYFIX ============ -->
+  <p class="label">Kent HandyFix, front and back</p>
+  <div class="pair">
+    <div class="card khf-front">
+      <img class="logo" src="../assets/img/logo-kenthandyfix.png" alt="">
+      <div class="push row">
+        <div>
+          <p class="tel">07557 733363</p>
+          <p class="web">kenthandyfix.co.uk</p>
+        </div>
+        <div style="text-align:right">
+          <p class="role" style="opacity:.6">Hoo &middot; Medway</p>
+          <p class="role" style="opacity:.6">Rochester &middot; Strood</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card khf-back light">
+      <div class="bar"></div>
+      <div class="row" style="align-items:flex-start">
+        <div style="flex:1">
+          <h4>What we do</h4>
+          <ul class="svc">
+            <li>Doors &amp; locks</li><li>Taps &amp; plumbing</li>
+            <li>Painting</li><li>Shelving</li>
+            <li>Tiling &amp; sealing</li><li>Flat-pack</li>
+            <li>Fencing</li><li>Small repairs</li>
+          </ul>
+        </div>
+        <div class="qr"><img src="qr/qr-handyfix.svg" alt="Scan for kenthandyfix.co.uk"></div>
+      </div>
+      <div class="push">
+        <p style="margin:0; font-size:8.2pt; font-weight:700">Small jobs welcome &middot; No VAT to add</p>
+        <p style="margin:.3em 0 0; font-size:7.2pt; color:#6a747d">Free quotes. Scan the code for prices.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BATHROOM WIZARDS ============ -->
+  <p class="label">Bathroom Wizards, front and back</p>
+  <div class="pair">
+    <div class="card bw-front">
+      <div class="row" style="align-items:flex-start">
+        <div>
+          <p class="name" style="font-size:14pt">Bathroom<br>Wizards</p>
+          <p class="role" style="color:#c9a8e8">Bathroom fitters &middot; Medway</p>
+        </div>
+        <img class="logo" src="../assets/img/logo-bathroomwizards.png" alt="">
+      </div>
+      <div class="push row">
+        <div>
+          <p class="tel">07557 733363</p>
+          <p class="web">Free written quotes</p>
+        </div>
+        <div style="text-align:right">
+          <p class="role" style="opacity:.75">&#9733; 10/10</p>
+          <p class="role" style="opacity:.75">Checkatrade</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bw-back light">
+      <div class="bar"></div>
+      <div class="row" style="align-items:flex-start">
+        <div style="flex:1">
+          <h4>Starting prices</h4>
+          <ul class="prices">
+            <li><span>Complete refit</span> <b>from &pound;2,400</b></li>
+            <li><span>Wet room</span> <b>from &pound;3,900</b></li>
+            <li><span>Suite swap</span> <b>from &pound;1,150</b></li>
+            <li><span>Toilet fitted</span> <b>from &pound;150</b></li>
+            <li><span>Re-seal &amp; grout</span> <b>from &pound;95</b></li>
+          </ul>
+        </div>
+        <div class="qr"><img src="qr/qr-bathrooms.svg" alt="Scan for full price list"></div>
+      </div>
+      <div class="push">
+        <p style="margin:0; font-size:8.2pt; font-weight:700">No VAT to add &middot; Fixed written quotes</p>
+        <p style="margin:.3em 0 0; font-size:7.2pt; color:#8b6bb0">Scan for the full price list.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ KENTISH SHIPWRIGHTS ============ -->
+  <p class="label">Kentish Shipwrights, front and back</p>
+  <div class="pair">
+    <div class="card ks-front">
+      <div>
+        <p class="wordmark">Kentish<br>Shipwrights</p>
+        <div class="rule"></div>
+        <p class="role" style="color:#c08a3e">Marine carpentry &middot; Restoration &middot; Block making</p>
+      </div>
+      <div class="push row">
+        <div>
+          <p class="tel">07557 733363</p>
+          <p class="web">kentishshipwrights.co.uk</p>
+        </div>
+        <div style="text-align:right">
+          <p class="role" style="opacity:.6">Kent &middot; Medway</p>
+          <p class="role" style="opacity:.6">Thames Estuary</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card ks-back light">
+      <div class="bar"></div>
+      <div class="row" style="align-items:flex-start">
+        <div style="flex:1">
+          <h4>Services</h4>
+          <ul class="svc">
+            <li>Custom blocks</li><li>Rig fittings</li>
+            <li>Structural timber</li><li>Decks</li>
+            <li>Oakum caulking</li><li>Fine joinery</li>
+            <li>Winter refits</li><li>Mobile call-out</li>
+          </ul>
+        </div>
+        <div class="qr"><img src="qr/qr-shipwrights.svg" alt="Scan for kentishshipwrights.co.uk"></div>
+      </div>
+      <div class="push">
+        <p style="margin:0; font-size:8.2pt; font-weight:700; font-family:Newsreader,Georgia,serif">Afloat or on the hard &middot; Insured</p>
+        <p style="margin:.3em 0 0; font-size:7.2pt; color:#7b6a4f">kentishblockmakers@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
