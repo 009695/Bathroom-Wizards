@@ -77,6 +77,10 @@ cd print
 python3 make-qr.py https://bathroomwizards.co.uk
 ```
 
+**GitHub Pages paths are case sensitive.** The repo is `Bathroom-Wizards`, so the live URL is
+`https://009695.github.io/Bathroom-Wizards/`. The lowercase spelling returns a 404. Always verify a
+regenerated QR code resolves before sending anything to a printer.
+
 Regenerate the print PDFs:
 
 ```sh
